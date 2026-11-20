@@ -1,6 +1,6 @@
 ---
 name: ajustar-precos
-description: Muda preços, promoções e disponibilidade do catálogo de uma loja na Compare, um item ou vários de uma vez. Use quando o lojista pedir para subir, baixar, reajustar ou corrigir preço, criar ou tirar promoção, pausar ou reativar itens.
+description: Muda preços, custos, promoções, vitrines e disponibilidade do catálogo de uma loja na Compare, um item ou vários de uma vez. Use quando o lojista pedir para subir, baixar, reajustar ou corrigir preço, pôr preço pela margem, dizer quanto sobra, guardar custo ou taxa, organizar ou ordenar vitrines, criar ou tirar promoção, pausar ou reativar itens.
 ---
 
 # Ajustar preços e promoções
@@ -13,6 +13,17 @@ Fale em português do Brasil, simples. Dinheiro sempre em reais, com duas casas.
 2. **Mostre antes de mudar**: uma tabela com nome, preço atual e preço novo. Em reajuste por percentual, mostre o valor final já arredondado para duas casas.
 3. **Grave** com `catalogo_definir_preco` (valor ou percentual, um item ou vários). Mudança em vários itens pede confirmação: mostre o resumo que a ferramenta devolve e espere o "sim".
 4. **Confirme o resultado** em uma frase: quantos mudaram e, se algum falhou, qual e por quê.
+
+## Custo, imposto e preço pela margem
+
+- **Custo** (`catalogo_definir_custo`): quanto o item custa para a loja. O cliente nunca vê. Aceita a planilha inteira (até 50 itens); produto com variações guarda o custo de cada variação.
+- **Imposto e taxas** (`config_custos_da_venda`): o imposto sobre a venda (MEI é 0%, o DAS é fixo; no Simples, a alíquota que o contador passa) e a taxa da maquininha no crédito, no débito e no Pix. Pergunte ao lojista. Nunca chute taxa nem alíquota.
+- **Quanto sobra**: `catalogo_listar` e `catalogo_ver_item` trazem `custo`, `sobra_no_credito` e `sobra_no_pix`. Margem é o que sobra do PREÇO, não "em cima do custo": 60% em cima do custo deixa bem menos de 60% de sobra.
+- **Preço pela margem**: `catalogo_definir_preco` com `margem: { percentual }` usa o custo guardado, o imposto e a taxa do crédito (o pior caso); com `forma_de_pagamento` usa outra taxa, e com `custos_da_venda_pct` usa os percentuais que o lojista disser. Item sem custo é recusado: peça o custo e grave antes.
+
+## Vitrines
+
+As vitrines são as seções da página da loja e do app. `vitrines_listar` mostra a ordem que o cliente vê; `vitrines_criar` cria; `vitrines_ordenar` muda a ordem delas; `vitrines_organizar` põe e tira produtos; `vitrines_ordenar_itens` muda a ordem dentro de uma vitrine. Para "reorganizar a vitrine para vender mais", leia antes o que vende e o que sai junto (`pedidos_listar` no histórico), proponha o arranjo e só mude depois do "sim".
 
 ## Regras do produto
 
