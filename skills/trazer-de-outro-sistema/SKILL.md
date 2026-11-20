@@ -31,7 +31,7 @@ Mostre ao lojista uma tabela curta do primeiro lote (nome, preço, categoria, va
 
 - Até 50 itens por chamada. A ferramenta pede confirmação: mostre o resumo e espere o "sim". Cada lote confirmado conta como uma alteração no limite do plano Grátis.
 - Uma importação por loja de cada vez: espere a resposta antes de mandar o próximo lote.
-- Leia o resultado item a item. o que vem em `falharam` traz o motivo (categoria que não existe, limite do plano, etapa que cita um item que não entrou). Corrija e mande só os que falharam, com o mesmo `import_ref`.
+- Leia o resultado item a item. O que vem em `falharam` traz o motivo (categoria que não existe, limite do plano, etapa que cita um item que não entrou). Corrija e mande só os que falharam, com o mesmo `import_ref`.
 - `warning` significa que o item entrou, mas algo depois não (foto, estoque inicial ou vitrine). Diga qual e como resolver.
 
 ## 5. Fechar
