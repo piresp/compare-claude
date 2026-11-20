@@ -1,0 +1,8 @@
+{
+  "mcpServers": {
+    "compare": {
+      "type": "http",
+      "url": "https://mcp.usecompare.com.br/mcp"
+    }
+  }
+}

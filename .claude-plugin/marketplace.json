@@ -1,0 +1,15 @@
+{
+  "name": "compare",
+  "description": "Plugin oficial da Compare para o Claude: a sua loja pela conversa.",
+  "owner": {
+    "name": "Compare",
+    "url": "https://usecompare.com.br"
+  },
+  "plugins": [
+    {
+      "name": "compare",
+      "source": "./",
+      "description": "Monte, alimente e configure a sua loja na Compare conversando."
+    }
+  ]
+}

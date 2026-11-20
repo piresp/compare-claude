@@ -1,0 +1,8 @@
+{
+  "name": "compare",
+  "version": "1.0.0",
+  "description": "Monte, alimente e configure a sua loja na Compare conversando: catálogo, importação de outro sistema, parte fiscal, configurações e equipe.",
+  "author": { "name": "Compare", "url": "https://usecompare.com.br" },
+  "homepage": "https://usecompare.com.br/claude",
+  "keywords": ["compare", "loja", "catálogo", "nota fiscal", "pdv"]
+}
